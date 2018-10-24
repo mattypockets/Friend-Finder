@@ -1,0 +1,25 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "The only way to find friends online!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattypockets/Friend-Finder.git"
+  },
+  "author": "Matt Gasper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattypockets/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/mattypockets/Friend-Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
+}
