@@ -185,14 +185,14 @@
                 ]
             };
 
-            console.log(newFriend);
-        // Post new friend in to friends array
-        // Return name and photo of matched best friend
-        // Place name and photo of best friend in modal
-        $.post("/api/friends", newFriend, function(data){
-            $(".friendName").text(data.name);
-            $(".friendImg").attr("src", data.photo);
-        })       
+        
+            // Post new friend in to friends array
+            // Return name and photo of matched best friend
+            // Place name and photo of best friend in modal
+            $.post("/api/friends", newFriend, function(data){
+                $(".friendName").text(data.name);
+                $(".friendImg").attr("src", data.photo);
+            })       
        })
     });
    </script>   
