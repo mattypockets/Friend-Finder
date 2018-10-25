@@ -31,9 +31,9 @@
                 </div>
             </div>
                 <div class="row">
-                    <label>Question 1</label>    
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q1">Question 1</label>    
+                    <select name="q1" id="q1">
+                        <option value="" disabled selected>I consider myself a morning person.</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -43,9 +43,9 @@
                 </div>
                 <!-- Question 2 -->
                 <div class="row">
-                    <label>Question 2</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q2">Question 2</label>
+                    <select name="q2" id="q2">
+                        <option value="" disabled selected>I always try to get my work done as soon as I can.</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -55,9 +55,9 @@
                 </div>
                 <!--Question 3 -->
                 <div class="row">
-                    <label>Question 3</label>   
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q3">I am rarely late</label>   
+                    <select name="q3" id="q3">
+                        <option value="" disabled selected>I am rarely late</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -67,9 +67,9 @@
                 </div>
                 <!-- Question 4 -->
                 <div class="row">
-                    <label>Question 4</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q4">Question 4</label>
+                    <select name="q4" id="q4">
+                        <option value="" disabled selected>School is important to me</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -79,9 +79,9 @@
                 </div>
                 <!-- Question 5 -->
                 <div class="row">
-                    <label>Question 5</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q5">Question 5</label>
+                    <select name="q5" id="q5">
+                        <option value="" disabled selected>I get along well with my family.</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -91,21 +91,21 @@
                 </div>
                 <!-- Question 6 -->
                 <div class="row">
-                    <label>Question 6</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q6">Question 6</label>
+                    <select name="q6" id="q6">
+                        <option value="" disabled selected>I do my best to help others succeed</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
-                        <option value="5">O5 (Strongly Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
                     </select>     
                 </div>
                 <!-- Question 7 -->
                 <div class="row">
-                    <label>Question 7</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q7">Question 7</label>
+                    <select name="q7" id="q7">
+                        <option value="" disabled selected>I am a competitive person</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -115,9 +115,9 @@
                 </div>
                 <!-- Question 8 -->
                 <div class="row">
-                    <label>Question 8</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q8">Question 8</label>
+                    <select name="q8" id="q8">
+                        <option value="" disabled selected>I like to express myself artistically</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -127,9 +127,9 @@
                 </div>
                 <!-- Question 9 -->
                 <div class="row">
-                    <label>Question 9</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q9">Question 9</label>
+                    <select name="q9" id="q9">
+                        <option value="" disabled selected>Physical fitness is very important to me</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -139,9 +139,9 @@
                 </div>
                 <!-- Question 10 -->
                 <div class="row">
-                    <label>Question 10</label>
-                    <select>
-                        <option value="" disabled selected>Choose your option</option>
+                    <label for="q10">Question 10</label>
+                    <select name="q10" id="q10">
+                        <option value="" disabled selected>My peers consider me to be a leader</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -154,7 +154,47 @@
                     <i class="material-icons right">send</i>
                 </button>
             </div>    
-         </form>       
+         </form>
+           <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+            <h3>Meet your new best friend!</h4>
+            <h4 class="friendName"></h4>
+            <img class="friendImg" src="" alt="">
+            </div>
+        </div>     
       </div>
-   </body>   
+   </body>
+   <script>
+       $(".btn").on('click', function(event){
+            event.preventDefault();
+
+            // Compile all of the inputs into a new friend
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#image").val().trim(),
+                score: [
+                    $("#q1").val().trim().charAt(0),
+                    $("#q2").val().trim().charAt(0),
+                    $("#q3").val().trim().charAt(0),
+                    $("#q4").val().trim().charAt(0),
+                    $("#q5").val().trim().charAt(0),
+                    $("#q6").val().trim().charAt(0),
+                    $("#q7").val().trim().charAt(0),
+                    $("#q8").val().trim().charAt(0),
+                    $("#q9").val().trim().charAt(0),
+                    $("#q10").val().trim().charAt(0),
+                ]
+            };
+
+            console.log(newFriend);
+        // Post new friend in to friends array
+        // Return name and photo of matched best friend
+        // Place name and photo of best friend in modal
+        $.post("/api/friends", newFriend, function(data){
+            $(".friendName").text(data.name);
+            $(".friendImg").attr("src", data.photo);
+        })       
+       })
+   </script>   
 </html>
