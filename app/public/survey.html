@@ -5,14 +5,7 @@
       <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
       <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-      </script> 
-      
-      <script>
-         $(document).ready(function() {
-            $('select').material_select();
-         });
-      </script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>   
    </head>
    
    <body class = "container">   
@@ -150,7 +143,7 @@
                     </select>
                 </div>
             <div>  
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light modal-trigger" data-target="modal1">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>    
@@ -166,7 +159,12 @@
       </div>
    </body>
    <script>
-       $(".btn").on('click', function(event){
+
+    $(document).ready(function() {
+        $('select').material_select();
+        $('.modal-trigger').leanModal();
+
+        $(".btn").on('click', function(event){
             event.preventDefault();
 
             // Compile all of the inputs into a new friend
@@ -196,5 +194,6 @@
             $(".friendImg").attr("src", data.photo);
         })       
        })
+    });
    </script>   
 </html>

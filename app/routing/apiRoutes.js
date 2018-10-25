@@ -7,7 +7,8 @@ module.exports = function (app, friends) {
         
         // Take in new friend and convert the scores from strings to intergers
         var newFriend = req.body;
-        newFriend.scores.forEach(function(value, i, array){
+        console.log(newFriend);
+        newFriend.score.forEach(function(value, i, array){
             array[i]  = parseInt(value);
         })
         
@@ -32,6 +33,6 @@ module.exports = function (app, friends) {
         }
 
         friends.push(newFriend);
-        res.JSON(bestFriend);
+        res.json(bestFriend);
     });
 }
