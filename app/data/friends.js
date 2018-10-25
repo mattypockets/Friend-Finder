@@ -1,3 +1,1 @@
-friends = [];
-
-module.exports = friends;
+module.exports = [];
