@@ -12,17 +12,20 @@
       <div class = "row">
          <form class = "col s12">
             <div class="row">
+                <!-- Name text field -->
                 <div class="input-field">
                     <input placeholder="Joan Smith" id="name" type="text" class="validate">
                     <label for="name">Name</label>
                 </div>
             </div>
             <div class="row">
+                <!-- Image link text field -->
                 <div class="input-field">
                     <input placeholder="images.com/imageurl" id="image" type="text" class="validate">
                     <label for="image">Paste a link to a photo of you</label>
                 </div>
             </div>
+                <!-- Question 1 -->
                 <div class="row">
                     <label for="q1">Question 1</label>    
                     <select name="q1" id="q1">
@@ -142,6 +145,7 @@
                         <option value="5">5 (Strongly Agree)</option>
                     </select>
                 </div>
+            <!-- Submit button -->
             <div>  
                 <button class="btn waves-effect waves-light modal-trigger" data-target="modal1">Submit
                     <i class="material-icons right">send</i>
@@ -161,6 +165,8 @@
    <script>
 
     $(document).ready(function() {
+
+        // Initialize dropdowns and modal in Materialize
         $('select').material_select();
         $('.modal-trigger').leanModal();
 
